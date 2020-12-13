@@ -1,5 +1,127 @@
 # Algorithm Complexity / Big-O / Asymptotic analysis
 
+## Derek Banas: Big O Notation YT
+
+Treat code as psudo code
+
+Big O Notation:A mesure how how well computer code scales as input increases. Not always a mesure of speed by scalabiltiy.
+
+> 45^3 + 20n^2 + 19
+
+    If N is 1 then it's = 84
+    If N is 2 then it's = 459
+    If N is 10 then it's = 47,019
+
+    45^3 = 45,000
+    20n^2 = 2,000
+    19 = 19
+
+    At this point the + 19 dosen't have a large effect on the final number. The n^2 has a very minimal effect. This eqation has an order
+    of  O(N^3)
+
+### O(1) - Contant time
+
+An alogrithm that executes in the same no matter how big the input size
+
+- Adding an item into an array
+
+  names.append("Jack")
+
+- Getting a value
+  len(names)
+
+### O(N) - linear time
+
+Time to complete grows propotionaly with input size
+
+- Printing Array
+
+```
+for i in items:
+    print(i)`
+```
+
+- Searching array
+
+```
+found = False
+for name in names:
+    if name == "jack":
+        found = True
+print(found)
+```
+
+### O(N^2) - Quadratic Time
+
+Time to complete is proportional to the square of the amount of data
+
+- Bubble sort
+
+```
+def bubblesort():
+    for i in range(len(names)):
+        for j in range(len(names-i)):
+            if names[j] > names[j+1]:
+                # swap values
+```
+
+### O(log n)
+
+This is when data being used is decreased by aproximately 50% each time the data is evaluated during the algorithms. Typicaly for divide an conquer algorithms like binary search.
+
+As N increase the increase in log N is dramatically smaller.
+
+```
+def binary_search(names, value):
+    lowIndex = 0
+    highIndex = len(names) - 1
+
+    while (lowIndex <= highIndex):
+        middleIndex = (highIndex + lowIndex / 2)
+        if (names[middleIndex] < value):
+            lowIndex = middleIndex + 1
+        elif (names[middleIndex] > value):
+            highIndex = middleIndex - 1
+        else:
+            print("found a match")
+            break
+```
+
+Every time the algorithm rules out half of the value options halfing the amount of comparsions.
+
+### O(n log n)
+
+comparisions = n log n
+
+- Quick Sort
+
+```
+def quickSort(left, right):
+    if (right - left <= 0):
+        return;
+    else:
+        pivot = names[right]
+        pivotLocation = partitionArray(left, right, pivot)
+        quickSort(left, pivotLocation -)
+        quickSort(pivorLocation + 1, right)
+
+def partitionArray(left, right, pivot):
+    leftPointer = left - 1;
+    rightPointer = right
+
+    while(true){
+        while(names[++leftPointer] < pivot>):
+
+        while(rightPointer > 0 && names[-rightPointer] > pivot):
+
+
+        if (leftPointer >= rightPointer){
+            break
+        else:
+
+    }
+```
+
 ## Harvad CS50: Asymptotic Notation
 
 ---
